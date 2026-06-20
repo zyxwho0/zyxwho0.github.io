@@ -182,16 +182,14 @@
             box-shadow: var(--shadow);
         }
 
-        .hero-note::before {
+        .profile-photo {
             display: block;
             width: 100%;
             aspect-ratio: 1;
             margin-bottom: 30px;
             border-radius: 50%;
-            background:
-                linear-gradient(145deg, transparent 46%, rgba(255, 255, 255, 0.52) 47%, transparent 51%),
-                linear-gradient(145deg, var(--green), #173c2d);
-            content: "";
+            object-fit: cover;
+            object-position: 77% 28%;
         }
 
         .hero-note strong {
@@ -394,7 +392,7 @@
                 border-radius: 90px 22px 22px 90px;
             }
 
-            .hero-note::before {
+            .profile-photo {
                 margin-bottom: 0;
             }
 
@@ -433,7 +431,7 @@
                 border-radius: 140px 140px 22px 22px;
             }
 
-            .hero-note::before {
+            .profile-photo {
                 margin-bottom: 24px;
             }
 
@@ -496,6 +494,7 @@
                 </div>
             </div>
             <aside class="hero-note">
+                <img class="profile-photo" src="assets/profile-plate-hidden.png" alt="Yuxian Ashley Zhang outdoors">
                 <div>
                     <strong>Digital Transformation</strong>
                     <p>Digital transformation, intelligent workflows, and enterprise technology.</p>
