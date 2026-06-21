@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Yuxian (Ashley) Zhang is a solution consultant and sales engineer specializing in AI, workflow automation, data management, and enterprise software.">
     <meta name="theme-color" content="#f4f1ea">
-    <link rel="canonical" href="https://yuxianzhang.com/">
+    <link rel="canonical" href="https://www.yuxianzhang.com/">
     <title>Yuxian (Ashley) Zhang — Solution Consultant / Sales Engineer</title>
     <style>
         :root {
@@ -70,6 +70,7 @@
 
         nav {
             display: flex;
+            align-items: center;
             gap: 28px;
         }
 
@@ -82,6 +83,73 @@
 
         nav a:hover {
             color: var(--accent);
+        }
+
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .nav-project-link {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-project-link::after {
+            border: solid currentColor;
+            border-width: 0 1.5px 1.5px 0;
+            padding: 3px;
+            content: "";
+            transform: translateY(-2px) rotate(45deg);
+            transition: transform 180ms ease;
+        }
+
+        .nav-dropdown:hover .nav-project-link::after,
+        .nav-dropdown:focus-within .nav-project-link::after {
+            transform: translateY(2px) rotate(225deg);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            z-index: 10;
+            top: calc(100% + 14px);
+            left: 50%;
+            display: none;
+            min-width: 210px;
+            padding: 8px;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            background: #fbf9f4;
+            box-shadow: var(--shadow);
+            transform: translateX(-50%);
+        }
+
+        .dropdown-menu::before {
+            position: absolute;
+            right: 0;
+            bottom: 100%;
+            left: 0;
+            height: 15px;
+            content: "";
+        }
+
+        .nav-dropdown:hover .dropdown-menu,
+        .nav-dropdown:focus-within .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 12px;
+            border-radius: 9px;
+            white-space: nowrap;
+        }
+
+        .dropdown-menu a:hover,
+        .dropdown-menu a:focus-visible {
+            color: var(--ink);
+            background: rgba(44, 93, 73, 0.09);
+            outline: none;
         }
 
         .hero {
@@ -469,7 +537,12 @@
         <a class="monogram" href="#" aria-label="Yuxian (Ashley) Zhang home">YZ</a>
         <nav aria-label="Main navigation">
             <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
+            <div class="nav-dropdown">
+                <a class="nav-project-link" href="#projects">Projects</a>
+                <div class="dropdown-menu">
+                    <a href="https://news.yuxianzhang.com" target="_blank" rel="noreferrer">Daily News Briefing</a>
+                </div>
+            </div>
             <a href="#linkedin">LinkedIn</a>
         </nav>
     </header>
